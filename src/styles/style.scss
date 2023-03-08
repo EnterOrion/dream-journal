@@ -3,24 +3,153 @@
     
 }
 
+html,
 body {
-    background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+
+}
+
+form {
     margin: 0;
+}
+
+
+#root
+{
+    height: 100%;
+    width: 100%;
+
+}
+
+.main {
+ 
+    height: 100%;
+    width: 100%;
+  
+}
+
+.dream-question {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100%;
+    width: 100%;
+    background-color: black;
 }
 
-p {
+.dream-question p {
+    margin: 0;
     font-size: 4rem;
     color: white;
 }
 
+form {
+    width: 55%;
+   
+}
+
 input {
     background-color: white;
-    width: 90%;
-    padding: 10px;
-
+   margin-top: .75em;
+    width: 105%;
 }
+
+.dream-submit {
+    display: none;
+}
+
+.home {
+    height: 100%;
+    width: 100%;
+   
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    
+
+    p {
+        margin: 0;
+    }
+}
+
+.dream-cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+}
+
+header {
+    //background-color: rgba(207, 202, 202, 0.726);
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+    color: white;
+    font-style: bold;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 200px;
+  height: 254px;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  border: 3px solid rgb(117, 117, 117);
+  background-color: rgb(236, 236, 236);
+  position: relative;
+  overflow: hidden;
+  margin: 5px;
+
+
+   p {
+    margin-top: 40%;
+    font-family: 'Playfair Display', serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 180px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+   }
+
+   button {
+    margin-top: 5%;
+    margin-left: 50%;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+   }
+  }
+
+  .ribbon3 {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    background: #59324C;
+    color: white;
+  }
+
+.ribbon3:after {
+    content: "";
+    position: absolute;
+  }
+
+  .ribbon3:after {
+    height: 0;
+    width: 0;
+    right: -14.5px;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 15px solid #59324C;
+  }
