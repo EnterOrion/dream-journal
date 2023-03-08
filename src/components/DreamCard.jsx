@@ -8,7 +8,7 @@ const DreamCard = (props) => {
     <span class="ribbon3">{props.date}</span>
     </div>
     <p>{props.dream}</p>
-    <button>Read more</button>
+    <button className="read-more">Read more</button>
     </div>
     )
 }

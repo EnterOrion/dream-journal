@@ -93,6 +93,7 @@ header {
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
+
 }
 
 .card {
@@ -101,10 +102,10 @@ header {
   border-radius: 20px;
   padding: 5px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  border: 3px solid rgb(117, 117, 117);
+  border: 3px solid rgb(0, 0, 0);
   background-color: rgb(236, 236, 236);
   position: relative;
-  overflow: hidden;
+
   margin: 5px;
 
 
@@ -114,6 +115,7 @@ header {
     text-overflow: ellipsis;
     overflow: hidden;
     width: 180px;
+    overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
@@ -129,15 +131,18 @@ header {
   }
 
   .ribbon3 {
+
     width: 150px;
     height: 50px;
     line-height: 50px;
     padding-left: 15px;
     position: absolute;
-    left: -8px;
+    left: -3px;
     top: 10px;
     background: #59324C;
-    color: white;
+    color: rgb(233, 233, 233);
+    border-left: 1px solid black;
+
   }
 
 .ribbon3:after {
@@ -153,3 +158,25 @@ header {
     border-bottom: 25px solid transparent;
     border-left: 15px solid #59324C;
   }
+
+.read-more:hover {
+    color: grey;
+}
+
+.analyze-header:hover, .home-header:hover {
+    color: rgb(197, 133, 197);
+}
+
+.body-text {
+    font-family: 'Playfair Display', serif;
+    color: rgb(233, 233, 233);
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.light {
+    font-family: 'Playfair Display', serif;
+
+    font-weight: 300;
+    font-size: 26px;
+}
