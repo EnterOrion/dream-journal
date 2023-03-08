@@ -1,14 +1,21 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import DreamContext from "../contexts/DreamContext";
 import DreamCard from "./DreamCard";
 
 const Home = (props) => {
     const dreamContext = useContext(DreamContext);
-    const { dreams } = dreamContext;
+    const { dreams, setDreams } = dreamContext;
 
     const clickHandler = () => {
       props.updateDisplay();
     }
+
+    useEffect(() => {
+      const dreams = JSON.parse(localStorage.getItem('items'));
+      if (dreams) {
+       setDreams(dreams);
+      }
+    }, []);
 
   const dreamItems = dreams.map((element) => {
           return (

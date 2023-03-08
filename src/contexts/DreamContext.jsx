@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { format } from 'date-fns'
+import React, { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 
 const DreamContext = React.createContext({
@@ -22,6 +22,10 @@ const DreamContextProvider = ({ children }) => {
         console.log(dreams);
     }
 
+    useEffect(() => {
+        localStorage.setItem('dreams', JSON.stringify(dreams));
+      }, [dreams]);
+
     const removeDream = (dreamId) => {
         console.log('remove dream id', dreamId)
         setDreams([...dreams].filter(dream => dream.id !== dreamId));
@@ -29,7 +33,7 @@ const DreamContextProvider = ({ children }) => {
 
     return (
         <DreamContext.Provider value={{
-            dreams, addDream, removeDream
+            dreams, setDreams, addDream, removeDream
         }}>
             {children}
         </DreamContext.Provider>
