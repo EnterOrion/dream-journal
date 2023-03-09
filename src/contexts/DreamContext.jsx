@@ -27,7 +27,6 @@ const DreamContextProvider = ({ children }) => {
         const newDream = {dream: dream, date: today, id: dreams.length + 1};
         console.log('new dream added !', newDream);
         setDreams(prevDreamsArray => {return [...prevDreamsArray, newDream]})
-        console.log(dreams);
        
     }
 
