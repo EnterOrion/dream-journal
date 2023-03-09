@@ -4,7 +4,7 @@ import DreamCard from "./DreamCard";
 
 const Home = (props) => {
     const dreamContext = useContext(DreamContext);
-    const { dreams } = dreamContext;
+    const { dreams} = dreamContext;
 
     const clickHandler = () => {
       props.updateDisplay();
@@ -14,7 +14,7 @@ const Home = (props) => {
 
   const dreamItems = dreams.map((element) => {
           return (
-            <DreamCard date={element.date} dream={element.dream} />
+            <DreamCard date={element.date} dream={element.dream} id={element.id}/>
             )
           }
         )

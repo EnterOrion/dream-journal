@@ -31,7 +31,6 @@ const DreamContextProvider = ({ children }) => {
        
     }
 
- 
     useEffect(() => {
         localStorage.setItem('dreams', JSON.stringify(dreams));
       }, [dreams]);
@@ -39,8 +38,12 @@ const DreamContextProvider = ({ children }) => {
 
     const removeDream = (dreamId) => {
         console.log('remove dream id', dreamId)
-        setDreams([...dreams].filter(dream => dream.id !== dreamId));
+        setDreams(dreams.filter(dream => dream.id != dreamId));
+        console.log(dreams);
     }
+
+ 
+
 
     return (
         <DreamContext.Provider value={{
