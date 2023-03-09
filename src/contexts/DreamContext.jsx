@@ -11,20 +11,31 @@ const DreamContext = React.createContext({
 const DreamContextProvider = ({ children }) => {
     let today = format(new Date(), 'MM/dd/yyyy');
 
-
-
     const [dreams, setDreams] = useState([]);
 
+    useEffect(() => {
+        const dreams = JSON.parse(localStorage.getItem('dreams'));
+        if (dreams) {
+         setDreams(dreams);
+        }
+      }, []);
+
+
+
+   
     const addDream = (dream) => {
         const newDream = {dream: dream, date: today, id: dreams.length + 1};
         console.log('new dream added !', newDream);
-        setDreams([...dreams, newDream]);
+        setDreams(prevDreamsArray => {return [...prevDreamsArray, newDream]})
         console.log(dreams);
+       
     }
 
+ 
     useEffect(() => {
         localStorage.setItem('dreams', JSON.stringify(dreams));
       }, [dreams]);
+   
 
     const removeDream = (dreamId) => {
         console.log('remove dream id', dreamId)

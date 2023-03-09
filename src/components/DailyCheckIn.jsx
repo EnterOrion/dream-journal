@@ -8,6 +8,7 @@ const DailyCheckIn = (props) => {
 
     const [dreamData, setDreamData] = useState("");
 
+   
     const handleChange = (e) => {
         setDreamData(e.target.value);
     }

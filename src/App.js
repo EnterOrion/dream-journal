@@ -2,15 +2,16 @@ import "./styles/style.scss";
 import DailyCheckIn from "./components/DailyCheckIn";
 import { DreamContextProvider } from "./contexts/DreamContext";
 import React from 'react';
-import { useState } from 'react';
+import { useState} from 'react';
 import Home from "./components/Home";
 import Analysis from "./components/Analysis";
-import { useEffect } from "react";
 
 
 function App() {
-  const [state, setState] = useState('');
-  useEffect(() => {
+  const [state, setState] = useState('start');
+
+
+  /*useEffect(() => {
     let date = new Date().toLocaleDateString();
     if( localStorage.today_date === date ) {
         setState('home');
@@ -19,7 +20,7 @@ function App() {
     localStorage.today_date = date;
     setState('start');
     }
-  }, []);
+  }, []);*/
  
 
 
