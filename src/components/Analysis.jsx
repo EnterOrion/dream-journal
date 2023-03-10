@@ -83,6 +83,7 @@ const Analysis = (props) => {
     }
 
     const dreamItems = freqWords.map( (element) => {
+    
       return (
           <ul>
             <li>{element}</li>

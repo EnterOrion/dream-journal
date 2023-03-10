@@ -264,3 +264,7 @@ header {
     color: black;
   }
 
+  li::first-letter {
+    text-transform:capitalize;
+  }
+
