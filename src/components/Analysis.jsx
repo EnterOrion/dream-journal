@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import DreamContext from "../contexts/DreamContext";
 
 const Analysis = (props) => {
@@ -7,8 +7,7 @@ const Analysis = (props) => {
   let freqMap = {};
   let freqWords = [];
 
-
-  const nonSignificantWords =[
+  const nonSignificantWords = [
     "the",
     "there",
     "is",
@@ -49,61 +48,58 @@ const Analysis = (props) => {
     "had",
     "i",
     "very",
-    ];
+  ];
 
+  const clickHandler = () => {
+    props.updateDisplay("home");
+  };
 
-    const clickHandler = () => {
-        props.updateDisplay('home');
-    }
-
-    function wordFreq(string) {
-      let words = string.replace(/[.]/g, '').split(/\s/);
-      words.forEach(function(w) {
-        for (let word of nonSignificantWords) {
-          if (w == word) {
-            return;
-          }
+  function wordFreq(string) {
+    let words = string.replace(/[.]/g, "").split(/\s/);
+    words.forEach(function (w) {
+      for (let word of nonSignificantWords) {
+        if (w == word) {
+          return;
         }
-          if (!freqMap[w]) {
-              freqMap[w] = 0;
-          }
-          freqMap[w] += 1;
-          if (freqMap[w] > 5) 
-          {
-            if (!freqWords.includes(w))
-            freqWords.push(w);
-          }
-      });
-      
-      
+      }
+      if (!freqMap[w]) {
+        freqMap[w] = 0;
+      }
+      freqMap[w] += 1;
+      if (freqMap[w] > 5) {
+        if (!freqWords.includes(w)) freqWords.push(w);
+      }
+    });
   }
 
-    for (let dream of dreams) {
-      wordFreq(dream.dream);
-    }
+  for (let dream of dreams) {
+    wordFreq(dream.dream);
+  }
 
-    const dreamItems = freqWords.map( (element) => {
-    
-      return (
-          <ul>
-            <li>{element}</li>
-          </ul>
-
-        )
-      })
-      
-
+  const dreamItems = freqWords.map((element) => {
     return (
-    <div className="home">
-    <header>
-      <p className="home-header" onClick={clickHandler}>Dream Journal</p>
-      <p className="analyze-header">Analyze?</p></header>
-      <p className="body-text light">Analysis</p>
-      
-      <div className="body-text black-border"><p className="analysis-header">Most Frequent Symbols</p>{dreamItems}</div>
-      </div>
-    )
+      <ul>
+        <li>{element}</li>
+      </ul>
+    );
+  });
 
-}
+  return (
+    <div className="home">
+      <header>
+        <p className="home-header" onClick={clickHandler}>
+          Dream Journal
+        </p>
+        <p className="analyze-header">Analyze?</p>
+      </header>
+      <p className="body-text light">Analysis</p>
+
+      <div className="body-text black-border">
+        <p className="analysis-header">Most Frequent Symbols</p>
+        {dreamItems}
+      </div>
+    </div>
+  );
+};
 
 export default Analysis;

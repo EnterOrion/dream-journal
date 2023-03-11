@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/dream-journal/static/css/main.4e76bbcd.css",
+    "main.js": "/dream-journal/static/js/main.6db6dacc.js",
+    "static/media/background.jpg": "/dream-journal/static/media/background.bc5e11e0ae04cd8032b9.jpg",
+    "index.html": "/dream-journal/index.html",
+    "main.4e76bbcd.css.map": "/dream-journal/static/css/main.4e76bbcd.css.map",
+    "main.6db6dacc.js.map": "/dream-journal/static/js/main.6db6dacc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e76bbcd.css",
+    "static/js/main.6db6dacc.js"
+  ]
+}
