@@ -1,3 +1,7 @@
+$primary-font: "Playfair Display", serif;
+$primary-color: #59324c;
+$accent-color: grey;
+
 * {
   box-sizing: border-box;
 }
@@ -12,14 +16,12 @@ body {
 
 form {
   margin: 0;
+  width: 55%;
 }
 
-#root {
-  height: 100%;
-  width: 100%;
-}
-
-.main {
+#root,
+.main,
+.dream-question {
   height: 100%;
   width: 100%;
 }
@@ -29,19 +31,13 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
   background-color: black;
-}
 
-.dream-question p {
-  margin: 0;
-  font-size: 4rem;
-  color: white;
-}
-
-form {
-  width: 55%;
+  p {
+    margin: 0;
+    font-size: 4rem;
+    color: white;
+  }
 }
 
 input {
@@ -57,10 +53,8 @@ input {
 .home {
   min-height: 100%;
   width: 100%;
-
   background-image: url(../images/background.jpg);
   background-size: cover;
-
   display: flex;
   flex-direction: column;
 
@@ -76,7 +70,6 @@ input {
 }
 
 header {
-  //background-color: rgba(207, 202, 202, 0.726);
   background-color: rgb(37, 37, 37);
   padding: 20px;
   color: white;
@@ -95,12 +88,11 @@ header {
   border: 3px solid rgb(0, 0, 0);
   background-color: rgb(236, 236, 236);
   position: relative;
-
   margin: 5px;
 
   p {
     margin-top: 40%;
-    font-family: "Playfair Display", serif;
+    font-family: $primary-font;
     width: 180px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -118,7 +110,7 @@ header {
   position: absolute;
   left: -3px;
   top: 10px;
-  background: #59324c;
+  background: $primary-color;
   color: rgb(233, 233, 233);
   border-left: 1px solid black;
 }
@@ -134,20 +126,20 @@ header {
   right: -14.5px;
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
-  border-left: 15px solid #59324c;
-}
-
-.read-more:hover {
-  color: grey;
+  border-left: 15px solid $primary-color;
 }
 
 .read-more {
   margin-top: 5%;
   margin-left: 50%;
   border: none;
-  font-family: "Playfair Display", serif;
+  font-family: $primary-font;
   font-weight: bold;
   font-size: 15px;
+}
+
+.read-more:hover {
+  color: $accent-color;
 }
 
 .analyze-header:hover,
@@ -156,15 +148,14 @@ header {
 }
 
 .body-text {
-  font-family: "Playfair Display", serif;
+  font-family: $primary-font;
   color: rgb(233, 233, 233);
   padding-left: 20px;
   padding-top: 10px;
 }
 
 .light {
-  font-family: "Playfair Display", serif;
-
+  font-family: $primary-font;
   font-weight: 300;
   font-size: 26px;
 }
@@ -173,7 +164,7 @@ header {
   margin-top: 4%;
   margin-left: 55%;
   border: none;
-  font-family: "Playfair Display", serif;
+  font-family: $primary-font;
   font-weight: bold;
   font-size: 11px;
 }
@@ -203,13 +194,13 @@ header {
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
+  box-shadow: inset 0 0 5px $accent-color;
   border-radius: 10px;
   background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #59324c;
+  background: $primary-color;
   border-radius: 10px;
   border: 1px solid rgb(0, 0, 0);
 }
@@ -231,8 +222,8 @@ header {
 }
 
 .close-button:hover {
-  color: grey;
-  border: 1px solid grey;
+  color: $accent-color;
+  border: 1px solid $accent-color;
 }
 
 .analysis-header {
@@ -240,7 +231,7 @@ header {
 }
 
 .black-border {
-  border: 4px solid grey;
+  border: 4px solid $accent-color;
   margin: 10px 10px;
   padding: 2em;
   background-color: rgb(236, 236, 236);
