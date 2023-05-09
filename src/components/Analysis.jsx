@@ -47,6 +47,7 @@ const Analysis = (props) => {
     "were",
     "had",
     "i",
+    "I",
     "very",
   ];
 
@@ -85,17 +86,17 @@ const Analysis = (props) => {
   });
 
   return (
-    <div className="home">
+    <div className="analyze">
       <header>
         <p className="home-header" onClick={clickHandler}>
           Dream Journal
         </p>
         <p className="analyze-header">Analyze?</p>
       </header>
-      <p className="body-text light">Analysis</p>
+      <p className="body-text light more-padding">Analysis</p>
 
       <div className="body-text black-border">
-        <p className="analysis-header">Most Frequent Symbols</p>
+        <p className="analysis-header">Most Frequent Symbols:</p>
         {dreamItems}
       </div>
     </div>
