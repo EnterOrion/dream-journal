@@ -1,5 +1,7 @@
 # Dream Journal
 
+![Screenshot of the website](./src/images/dreamJournalScreenshot.png?raw=true)
+
 ## About
 
 This is a simple web application made with React and SASS to record dreams. <br/>
