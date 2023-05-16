@@ -6,10 +6,12 @@ const Home = (props) => {
   const dreamContext = useContext(DreamContext);
   const { dreams } = dreamContext;
 
+  // Render analysis page when clicked
   const clickHandler = () => {
     props.updateDisplay();
   };
 
+  // Display all the dreams
   const dreamItems = dreams.map((element) => {
     return (
       <DreamCard date={element.date} dream={element.dream} id={element.id} />

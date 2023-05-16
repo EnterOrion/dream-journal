@@ -7,6 +7,7 @@ const DailyCheckIn = (props) => {
 
   const [dreamData, setDreamData] = useState("");
 
+  // Handles the state of the form while user is typing
   const handleChange = (e) => {
     setDreamData(e.target.value);
   };
@@ -14,6 +15,7 @@ const DailyCheckIn = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDream(dreamData);
+    // Go to home after dream is submitted for that day
     props.updateDisplay();
   };
 

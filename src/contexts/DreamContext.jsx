@@ -8,10 +8,12 @@ const DreamContext = React.createContext({
 });
 
 const DreamContextProvider = ({ children }) => {
+  // Format date nicely
   let today = format(new Date(), "MM/dd/yyyy");
 
   const [dreams, setDreams] = useState([]);
 
+  // Retrieve dreams from local storage
   useEffect(() => {
     const dreams = JSON.parse(localStorage.getItem("dreams"));
     if (dreams) {
@@ -27,6 +29,7 @@ const DreamContextProvider = ({ children }) => {
     });
   };
 
+  // Add new dreams to local storage when the dreams array is updated
   useEffect(() => {
     localStorage.setItem("dreams", JSON.stringify(dreams));
   }, [dreams]);

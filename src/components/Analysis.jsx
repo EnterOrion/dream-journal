@@ -59,6 +59,7 @@ const Analysis = (props) => {
     let words = string.replace(/[.]/g, "").split(/\s/);
     words.forEach(function (w) {
       for (let word of nonSignificantWords) {
+        // Filter out nonsignificant words
         if (w == word) {
           return;
         }
@@ -66,7 +67,10 @@ const Analysis = (props) => {
       if (!freqMap[w]) {
         freqMap[w] = 0;
       }
+      // Increase by one for each instance of the word found
       freqMap[w] += 1;
+
+      // If it has showed up more than five times, display in analysis
       if (freqMap[w] > 5) {
         if (!freqWords.includes(w)) freqWords.push(w);
       }
@@ -77,6 +81,7 @@ const Analysis = (props) => {
     wordFreq(dream.dream);
   }
 
+  // Maps reoccurring symbols to a list
   const dreamItems = freqWords.map((element) => {
     return (
       <ul>

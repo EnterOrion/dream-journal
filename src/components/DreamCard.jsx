@@ -2,6 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from "react";
 import DreamContext from "../contexts/DreamContext";
 
 const DreamCard = (props) => {
+  // Only display 'read more' if the text is greater than the container
   const [overflowActive, setOverflowActive] = useState(false);
   const [readMore, setReadMore] = useState(false);
 
@@ -11,6 +12,7 @@ const DreamCard = (props) => {
     removeDream(e.target.value);
   };
 
+  // Use ref to check for overflow
   const textRef = useRef();
 
   function isOverflowActive(event) {
@@ -29,10 +31,12 @@ const DreamCard = (props) => {
     setOverflowActive(false);
   }, []);
 
+  // Displays details on 'read more' click
   const readMoreHandler = () => {
     setReadMore(true);
   };
 
+  // Close the details popup
   const closeHandler = () => {
     setReadMore(false);
   };
